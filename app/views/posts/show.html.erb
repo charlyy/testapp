@@ -1,6 +1,16 @@
 <div class="show_post_container">
 	<div class="post_container">
 		<h1><%= @post.title %></h1>
-		<p><%= @post.caption %></p>
+		<h4><%= @post.caption %></h4>
+		<div class="comments_container">
+			<p> <strong>Comments</strong> </p>
+			<% @post.comments.each do |c| %>
+			<%= c.text %> <br />
+			Posted by <%= link_to c.user.email, c.user %> <%= distance_of_time_in_words_to_now(c.created_at) + " ago" %>  <br /> <br />
+			<% end %>
+		</div>
 	</div>
+</div> <br />
+<div class="buttons">
+	<%= link_to "Comment", new_post_comment_path(@post), class: "btn btn-lg btn-success", type: "button" %>
 </div>

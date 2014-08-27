@@ -1,14 +1,17 @@
 class PostsController < ApplicationController
+	
 	def index
-    	@posts = Post.all
+    	@posts = Post.all.reverse
     	@user = current_user
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@comments = @post.comments.reverse
 	end
 
 	def new
+		@user = current_user
 		@post = Post.new
 	end
 
@@ -26,6 +29,7 @@ class PostsController < ApplicationController
 
 	def edit
 		@post = Post.find(params[:id])
+		@user = current_user
 	end
 
 	def update

@@ -14,11 +14,12 @@ textarea {
 /*** Post - Show - Page ***/
 .show_post_container {
 	background-color: rgba(50,50,50,.2);
-	height: 200px;
-	width: 50%;
+	height: 420px;
+	width: 70%;
 	margin: 0 auto;
 	border-radius: 20px;
 	border: 1px solid black;
+	overflow: scroll;
 	.post_container {
 		height: 100%;
 	}

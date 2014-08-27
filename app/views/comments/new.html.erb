@@ -1,0 +1,9 @@
+<div class="comment_container">
+	<h1>Add A Comment</h1>
+	<%= bootstrap_form_for([@post, @comment]) do |f| %>
+		<%= f.text_field :text, placeholder: "Max. 100 Characters", class: "form-control input-lg" %>
+		<div class="buttons">
+		<%= f.submit class: "btn btn-primary btn-lg", value: "Submit"%> 
+		</div>
+	<% end %>
+</div>
