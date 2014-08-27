@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  has_many :posts
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -6,7 +6,8 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
-
+gem 'genghis', '~> 1.4.1'
+gem 'bootstrap_form'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'

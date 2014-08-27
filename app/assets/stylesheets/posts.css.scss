@@ -1,3 +1,44 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea { 
+	resize: none;
+}
+
+
+.new_post_header, .index_post_header, .index_post_count, .show_post_container {
+	text-align: center;
+}
+
+/*** Post - Show - Page ***/
+.show_post_container {
+	background-color: rgba(50,50,50,.2);
+	height: 200px;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 20px;
+	border: 1px solid black;
+	.post_container {
+		height: 100%;
+	}
+}
+
+/*** Post - New - Page ***/
+
+
+/*** Post - Index - Page ***/
+
+.posts_container {
+	li {
+		list-style-type: none;
+		text-align: center;
+	}
+	a {
+		font-size: 2em;
+		color: rgba(20,20,20,1);
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,18 @@
+<div class="index_post_container">
+    <h1 class="index_post_header">Post Index</h1>
+    <h4 class="index_post_count"><%= pluralize(@posts.count, "post") %></h4>
+    <ul>
+    <% @posts.each do |p| %>
+            <div class=".col-md-4 posts_container">
+                <li>
+                    <%= link_to post_path p do %>
+                        <strong> <%= p.title %> </strong> <br />
+                    <% end %> 
+                    <h5> Posted by <%= p.user.email %> <%= distance_of_time_in_words_to_now(p.created_at) + " ago" %> </h5>
+                    
+                </li>
+            </div> 
+    <% end %>
+    </ul>
+</div>
+
