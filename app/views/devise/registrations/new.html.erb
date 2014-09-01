@@ -6,6 +6,7 @@
 		<%= f.email_field :email, autofocus: true %> <br />
 	    <%= f.password_field :password, autocomplete: "off", placeholder: "Min. 8 Characters" %> <br />
 	    <%= f.password_field :password_confirmation, autocomplete: "off" %> <br />
+	    <%= f.check_box :admin %>
 	    <div class="buttons">
 			<%= f.submit "Sign up", class: "btn btn-info btn-lg" %> <br /> <br />
 			<%= render "devise/shared/links" %>

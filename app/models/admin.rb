@@ -1,15 +1,10 @@
-class User
+class Admin
   include Mongoid::Document
-  has_many :posts
-  has_and_belongs_to_many :roles
   rolify
-  # resourcify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
-  #attr_accessible :admin, :email, :password, :password_confirmation, :remember_me
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -28,7 +23,7 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
-  field :admin, :type => Boolean, :default => true
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time

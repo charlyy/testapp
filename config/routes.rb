@@ -1,9 +1,11 @@
 Testapp::Application.routes.draw do
+  devise_for :admins, controllers: { registrations: "admins/registrations" }
   get "comments/new"
   get "posts/index"
   get "welcome/index"
   devise_for :users
   resources :users
+  resources :welcome
   resources :posts do
       resources :comments
   end

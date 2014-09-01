@@ -1,12 +1,15 @@
 <div class="show_post_container">
 	<div class="post_container">
+		<% if current_user %>
+			<%= link_to 'Edit', edit_post_path, class: "btn btn-lg btn-success", type: "button" %>
+		<% end %>
 		<h1><%= @post.title %></h1>
 		<h4><%= @post.caption %></h4>
 		<div class="comments_container">
 			<p> <strong>Comments</strong> </p>
 			<% @post.comments.each do |c| %>
-			<%= c.text %> <br />
-			Posted by <%= link_to c.user.email, c.user %> <%= distance_of_time_in_words_to_now(c.created_at) + " ago" %>  <br /> <br />
+				<%= c.text %> <br />
+				Posted by <%= link_to c.user.email, c.user %> <%= distance_of_time_in_words_to_now(c.created_at) + " ago" %> <%= link_to "Edit Comment", edit_post_comment %>  <br /> <br />
 			<% end %>
 		</div>
 	</div>

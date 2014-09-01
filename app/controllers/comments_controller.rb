@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
 	end
 
 	def edit
+		@comment = Comment.find(params[:id])
 	end
 
 	def create
