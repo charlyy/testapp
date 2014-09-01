@@ -1,1 +1,4 @@
 <p>User: <%= @user.email %></p>
+<% if current_user.has_role? :admin %>
+<h1>You're An Admin!</h1>
+<% end %>

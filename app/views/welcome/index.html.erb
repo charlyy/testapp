@@ -1,8 +1,8 @@
 <div class="welcome_container">
 	<h1>Welcome</h1>	
-	<%# if current_user.has_role? :admin %>
+	<% if current_user.has_role? :admin %>
 		<% @users.each do |user| %>
 			<p> User: <%= link_to user.email, user %> </p>	
 			<% end %>	
-		<%# end %>
+		<% end %>
 </div>
