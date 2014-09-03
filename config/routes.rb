@@ -1,8 +1,18 @@
 Testapp::Application.routes.draw do
+  get "user/index"
+  get "user/show"
   get "comments/new"
   get "posts/index"
   get "welcome/index"
+  
   devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+    end
+  #resources :user, :controller => "user"
+  #root :to => "user#show"
+
   resources :users
   resources :welcome
   resources :posts do
@@ -13,7 +23,6 @@ Testapp::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
